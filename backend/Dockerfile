@@ -1,0 +1,15 @@
+FROM node:16
+
+WORKDIR /app
+
+COPY ./backend/package* ./
+
+RUN npm install 
+
+COPY ./backend . 
+
+RUN npm install -g pm2
+
+EXPOSE 4000
+
+CMD pm2 start index.js && tail -f /dev/null

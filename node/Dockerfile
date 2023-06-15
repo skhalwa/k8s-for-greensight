@@ -1,0 +1,15 @@
+FROM node:16
+
+WORKDIR /app
+
+COPY ./node/package* ./
+
+RUN npm install 
+
+COPY ./node . 
+
+RUN npm install -g pm2
+
+EXPOSE 5000
+
+CMD pm2 start index.js && tail -f /dev/null
