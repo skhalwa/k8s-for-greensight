@@ -2,11 +2,11 @@ FROM node:16
 
 WORKDIR /app
 
-COPY ./api/package* ./
+COPY ./package* ./
 
 RUN npm install 
 
-COPY ./api . 
+COPY . . 
 
 RUN npm install -g pm2
 

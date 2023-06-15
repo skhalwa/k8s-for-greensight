@@ -2,11 +2,11 @@ FROM node:16
 
 WORKDIR /app
 
-COPY ./backend/package* ./
+COPY package* ./
 
 RUN npm install 
 
-COPY ./backend . 
+COPY . . 
 
 RUN npm install -g pm2
 
